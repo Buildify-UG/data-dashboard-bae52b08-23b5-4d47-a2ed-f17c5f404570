@@ -7,6 +7,7 @@ import { CheckCircle2, Clock, DollarSign, TrendingUp, Plus } from 'lucide-react'
 import TaskList from '@/components/TaskList';
 import EarningsOverview from '@/components/EarningsOverview';
 import TaskForm from '@/components/TaskForm';
+import WithdrawalWidget from '@/components/WithdrawalWidget';
 
 interface Task {
   id: string;
@@ -188,7 +189,8 @@ const Dashboard = () => {
           </div>
 
           {/* Earnings Sidebar */}
-          <div>
+          <div className="space-y-6">
+            <WithdrawalWidget balance={earnings.total} />
             <EarningsOverview earnings={earnings} />
           </div>
         </div>
